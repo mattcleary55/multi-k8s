@@ -18,7 +18,7 @@ before_install:
   - docker build -t judgejab/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true judgejab/docker-react npm run test
+  - docker run judgejab/react-test npm test -- --coverage
 
 deploy:
   provider: script
