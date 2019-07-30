@@ -7,15 +7,15 @@ spec:
   selector:
     matchLabels:
       component: worker
-  template: 
+  template:
     metadata:
       labels:
         component: worker
     spec:
       containers:
-        - name: workers
+        - name: worker
           image: judgejab/multi-worker
-          env: 
+          env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
